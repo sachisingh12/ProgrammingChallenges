@@ -34,3 +34,26 @@ GROUP BY state
 ORDER BY total_conversions DESC
 LIMIT 1;
 
+/* Question 5
+
+Campaign2 is the most efficient campaign because it has a total revenue of 1800.00 and a total cost of 1200.00.
+The ROI for Campaign2 is calculated as (1800.00 - 1200.00) / 1200.00 = 0.50, indicating a 50% ROI.
+
+I ran this query to get the answer: 
+
+SELECT
+    c.id AS campaign_id,
+    c.name AS campaign_name,
+    SUM(m.revenue) AS total_revenue,
+    SUM(m.cost) AS total_cost,
+    (SUM(m.revenue) - SUM(m.cost)) / SUM(m.cost) AS roi
+FROM marketing_data AS m
+JOIN campaign_info AS c ON m.campaign_id = c.id
+GROUP BY c.id, c.name
+ORDER BY roi DESC
+LIMIT 1;
+
+*/
+
+
+/* Question 6 */
