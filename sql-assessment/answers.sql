@@ -57,3 +57,15 @@ LIMIT 1;
 
 
 /* Question 6 */
+
+
+SELECT
+    DAYNAME(date) AS day_of_week,
+    AVG(cost) AS avg_cost,
+    AVG(impressions) AS avg_impressions,
+    AVG(clicks) AS avg_clicks,
+    AVG(conversions) AS avg_conversions
+FROM marketing_data
+GROUP BY DAYNAME(date)
+ORDER BY avg_conversions DESC
+LIMIT 1;
